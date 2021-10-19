@@ -14,6 +14,7 @@ export default function UpdateProfile() {
   const emailRef = useRef('');
   const passwordRef = useRef('');
   
+  if (isAuthenticated === false) return <Redirect to='/' />;
   const oldname = auth.currentUser.displayName;
   const oldemail = auth.currentUser.email;
 
@@ -66,7 +67,7 @@ export default function UpdateProfile() {
 
     
   if (isDone === true) return <Redirect to='/' />;
-  if (isAuthenticated === null) return <Redirect to='/' />
+  if (isAuthenticated === null) return <Redirect to='/' />;
   return (
     <section className={styles.base}>
       <div className={styles.wrapper}>
